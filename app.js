@@ -41,7 +41,7 @@ UI.prototype.showAlert = function (message, className) {
 };
 
 UI.prototype.deleteBook = function (target) {
-  if (target.className =  'delete'){
+  if (target.className ===  'delete'){
     target.parentElement.parentElement.remove()
   }
 }
@@ -64,6 +64,7 @@ document.getElementById("book-form").addEventListener("submit", function (e) {
   } else {
     ui.addBookToList(newBook);
     ui.showAlert("Your book has been added", "success");
+    ui.clearField()
   }
   e.preventDefault();
 });
@@ -76,3 +77,4 @@ document.getElementById('book-list').addEventListener('click', function(e){
   ui.showAlert("Your book has been deleted", "success");
   e.preventDefault()
 })
+
